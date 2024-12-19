@@ -35,6 +35,12 @@ int main() {
 
     // Accessing an element just like normal arrays
     f_arr[1] = 10.10;
+	
+	// Finding the index of the element
+	// notice that `index` is not defined, its defined later within the macro DA_Find()
+	printf("Index of 99: ");
+	DA_Find(i_arr, 99, index);  // index is now a local variable
+	printf("%d\n", index);
 
     int num2 = 23;
     DA_Insert(i_arr, 0, num2);
@@ -45,26 +51,6 @@ int main() {
     printf("\n");
     
     printf("Floats: ");
-    DA_Print(f_arr, "%.2f, ", 0, DA_Size(f_arr));
-    printf("\n");
-
-    printf("Struct: ");
-    printf("(%d, %d)\n", point_arr[0].x, point_arr[0].y);    // Printing an element normally
-    
-        
-    // Test adding many integers
-    for (int i = 0; i < 10000; i++) {
-        DA_Add(i_arr, i);
-    }
-
-    DA_Print(i_arr, "%d, ", 0, DA_Size(i_arr));
-    
-    // ALWAYS free dynamic arrays with DA_Free(arr)
-    DA_Free(i_arr);
-    DA_Free(f_arr);
-    DA_Free(point_arr);
-    return 0;
-}
 ```
 # Other functions
 `DA_Find(array, value, output)`: Assigns the index of `value` in `array` to `output`.  
