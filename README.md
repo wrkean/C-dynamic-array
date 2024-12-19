@@ -1,4 +1,5 @@
-
+# How it works
+It works by first creating an array of 5 elements, storing `sizeof(size_t) * 5` bytes. The first three elements are metadata, namely: The size of the current array, the capacity of the current array, and the data size of the array. The actual array data starts at the 4th element, or at index 3. So when `DA_Create()` is called, it actually returns the pointer to the 4th element of the array.
 # Example usage
 ```c
 #include <stdio.h>
