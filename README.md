@@ -66,5 +66,14 @@ int main() {
     return 0;
 }
 ```
+# Other functions
+`DA_Find(array, value, output)`: Assigns the index of `value` in `array` to `output`.  
+`DA_Pop(array, index, output)`: Removes (pops) the value at `index` and assigns the removed value to `output`.  
+`DA_Fit_Shrink(array)`: Reduce `array` capacity such that its the same as the number of elements it stores.  
+`DA_Clear(array)`: Clears `array`.  
+`DA_Is_Empty(array)`: Returns `1` if `array` has the size of 0, returns `0` otherwise.  
+`DA_Size(array)`: Retuns `size_t <elements>`.  
+`DA_Cap(array)`: Returns `size_t <max_capacity>` where `max_capacity` is the threshold of when `array` doubles its size. Whenever `DA_Size(array) >= DA_Cap(array)`, `max_capacity` doubles.  
+`DA_Data_Size(array)`: Returns `size_t <size_per_element_in_bytes`, same as `sizeof(array[i])`.
 # Note
-If you want to use my code for your personal projects, just put your .c files to `src` folder and/or your .h files to `include` folder. Then, edit `makefile` accordingly (e.g. linking an external library) and execute `make`, no need to edit `makefile` if you just want to use the code above. The executable files will be put inside `bin` folder (which will be made if it doesn't exist yet), `cd` into `bin` then execute `program` by typing `./program`. Object files will also be put inside `obj` folder. 
+If you want to use my code for your personal projects, just put your .c files to `src` folder and/or your .h files to `include` folder. Then, edit `makefile` accordingly (e.g. linking an external library) and execute `make`, no need to edit `makefile` if you just want to use the code above. The executable files will be put inside `bin` folder, `cd` into `bin` then execute `program` by typing `./program`. Object files will also be put inside `obj` folder. 
