@@ -35,6 +35,7 @@ int main() {
 
     // Accessing an element just like normal arrays
     f_arr[1] = 10.10;
+
     // Finding the index of the element
     // notice that `index` is not defined, its defined later within the macro DA_Find()
     printf("Index of 99: ");
