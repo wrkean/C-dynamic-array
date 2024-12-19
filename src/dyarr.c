@@ -1,7 +1,7 @@
 // NOTE: GCC Compiler allow void* arithmetic, assuming the size of void in bytes is 1.
 // if your compiler does not allow void* arithmetic, simple cast the void* to char*, since char
 // have the size of 1 byte.
-#include "../include/dyarr.h"
+#include "dyarr.h"
 
 void* _create_arr(size_t initial_cap, size_t data_size) {
     size_t info_size = sizeof(size_t) * INFOS;
