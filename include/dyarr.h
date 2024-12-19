@@ -41,9 +41,9 @@ int _is_empty(void* arr);
     } while (0)
 
 #define DA_Find(arr, x, output) \
+	int output = -1;\
     do {\
-        output = -1;\
-        for (int i = 0; i < _get_info(arr, SIZE); i++) {\
+        for (int i = 0; i < (int) _get_info(arr, SIZE); i++) {\
             if (arr[i] == x) {\
                 output = i;\
                 break;\
