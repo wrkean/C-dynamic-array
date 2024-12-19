@@ -58,7 +58,6 @@ int main() {
     printf("Struct: ");
     printf("(%d, %d)\n", point_arr[0].x, point_arr[0].y);    // Printing an element normally
     
-        
     // Test adding many integers
     for (int i = 0; i < 10; i++) {
         DA_Add(i_arr, i);
@@ -77,6 +76,15 @@ int main() {
     DA_Free(point_arr);
     return 0;
 }
+```
+# Output
+```c
+Index of 99: 0
+Integers: 23, 99,
+Floats: 23.23, 10.10,
+Struct: (7, 11)
+23, 99, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+Index of 8: 10
 ```
 # Other functions
 `DA_Find(array, value, output)`: Assigns the index of `value` in `array` to `output`.  
