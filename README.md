@@ -68,8 +68,8 @@ int main() {
 ```
 # Other functions
 `DA_Find(array, value, output)`: Assigns the index of `value` in `array` to `output`.  
-`DA_Pop(array, index, output)`: Removes (pops) the value at `index` and assigns the removed value to `output`. 
-`DA_Fit_Shrink(array)`: Reduce `array` capacity such that its the same as the number of elements it stores. 
+`DA_Pop(array, index, output)`: Removes (pops) the value at `index` and assigns the removed value to `output`.  
+`DA_Fit_Shrink(array)`: Reduce `array` capacity such that its the same as the number of elements it stores.  
 `DA_Clear(array)`: Clears `array`.  
 `DA_Is_Empty(array)`: Returns `1` if `array` has the size of 0, returns `0` otherwise.  
 `DA_Size(array)`: Retuns `size_t <elements>`.  
