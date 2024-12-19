@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "dyarr.h"
+#include "../include/dyarr.h"
 
 typedef struct {
     int x;
@@ -29,6 +29,7 @@ int main() {
     
     // DA_Insert(array, i, value): Inserts an element at index i
     DA_Insert(f_arr, 0, 23.23f);
+    int index_99;
 
     // Accessing an element just like normal arrays
     f_arr[1] = 10.10;
@@ -50,7 +51,7 @@ int main() {
     
         
     // Test adding many integers
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 10; i++) {
         DA_Add(i_arr, i);
     }
 

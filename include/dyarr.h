@@ -39,9 +39,19 @@ int _is_empty(void* arr);
         __auto_type temp = x;\
         _insert(arr, i, &temp);\
     } while (0)
-    
-#define DA_Remove(arr, i) _remove(arr, i);
 
+#define DA_Find(arr, x, output) \
+    do {\
+        output = -1;\
+        for (int i = 0; i < _get_info(arr, SIZE); i++) {\
+            if (arr[i] == x) {\
+                output = i;\
+                break;\
+            }\
+        }\
+    } while (0)
+
+#define DA_Remove(arr, i) _remove(arr, i);
 #define DA_Pop(arr, i, o) _pop(arr, i, &o)
 #define DA_Fit_Shrink(arr) arr = _shrink_to_fit(arr)
 #define DA_Clear(arr) _clear(arr)
