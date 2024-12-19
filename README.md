@@ -36,12 +36,12 @@ int main() {
 
     // Accessing an element just like normal arrays
     f_arr[1] = 10.10;
-
-    // Finding the index of the element
-    // notice that `index` is not defined, its defined later within the macro DA_Find()
-    printf("Index of 99: ");
-    DA_Find(i_arr, 99, index);
-    printf("%d\n", index);
+	
+	// Finding the index of the element
+	int index;
+	printf("Index of 99: ");
+	DA_Find(i_arr, 99, &index);
+	printf("%d\n", index);
 
     int num2 = 23;
     DA_Insert(i_arr, 0, num2);
@@ -65,10 +65,11 @@ int main() {
     }
 
     DA_Print(i_arr, "%d, ", 0, DA_Size(i_arr));
-
-    printf("\nIndex of 8: ");
-    DA_Find(i_arr, 8, index_x);
-    printf("%d\n", index_x);
+	
+	int index_8;
+	printf("\nIndex of 8: ");
+	DA_Find(i_arr, 8, &index_8);
+	printf("%d\n", index_8);
     
     // ALWAYS free dynamic arrays with DA_Free(arr)
     DA_Free(i_arr);
