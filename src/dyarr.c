@@ -35,7 +35,11 @@ void _set_info(void* arr, Info info, size_t value) {
 
 void* _resize(void* arr) {
     void* new_arr = _create_arr(_get_info(arr, CAP) * RESIZE_FACTOR, _get_info(arr, DATA_SIZE));
-    memcpy(new_arr, arr, _get_info(arr, SIZE) * _get_info(arr, DATA_SIZE));
+    memcpy(
+        new_arr, 
+        arr, 
+        _get_info(arr, SIZE) * _get_info(arr, DATA_SIZE)
+    );
     _set_info(new_arr, SIZE, _get_info(arr, SIZE));
     _free(arr);
     
@@ -70,8 +74,24 @@ void _remove(void* arr, size_t index) {
 }
 
 void _insert(void* arr, size_t index, void* p_data) {
-    if (index < 0 || index >= _get_info(arr, SIZE)) {
+    if (_get_info(arr, SIZE) >= _get_info(arr, CAP)) {
+        arr = _resize(arr);
+    }
+    
+    if (index < 0) {
         fprintf(stderr, "Index out of bounds.\n");
+        return;
+    }
+    
+    if (index >= _get_info(arr, SIZE)) {
+        void* new_arr = _create_arr(((index + 1) * RESIZE_FACTOR), _get_info(arr, DATA_SIZE));
+        memcpy(
+            new_arr,
+            arr,
+            _get_info(arr, SIZE) * _get_info(arr, DATA_SIZE)
+        );
+        _set_info(new_arr, SIZE, index + 1);
+        free(arr);
         return;
     }
     
